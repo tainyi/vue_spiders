@@ -9,8 +9,8 @@ Vue.use(VueRouter);
 const router = new VueRouter({
     mode: 'history',
     routes:[
-        {path:'/404',component:errorC},
-        {path:'/wecome',component:wecome}
+        {name:'error',path:'/404',component:errorC},
+        {name:'wecome',path:'/wecome',component:wecome}
     ]
  
 })

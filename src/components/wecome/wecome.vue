@@ -2,7 +2,7 @@
     <div class="wecome">
         <h1 @click="changeText" ref="h1">{{msg}}</h1>
         <!-- <div v-for=""></div> -->
-        <img src='../../assets/logo.png' alt="">
+        <img :src='imgUrl' alt="">
     </div>
 </template>
 
@@ -12,7 +12,8 @@ export default {
     data(){
         return{
             msg:"点我切换文字",
-            axiosData:null
+            axiosData:null,
+            imgUrl:require('../../assets/logo.png')
         }
     },
     methods:{
