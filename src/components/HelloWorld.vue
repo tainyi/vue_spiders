@@ -27,6 +27,13 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+  
+    <h3>点击下面的内容进行切换</h3>
+    <ul>
+      <li><router-link :to="'/404'">error</router-link></li>
+      <li><router-link :to="'/wecome'">wecome</router-link></li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -40,19 +47,21 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="less">
 h3 {
   margin: 40px 0 0;
 }
 ul {
   list-style-type: none;
   padding: 0;
+  li {
+    display: inline-block;
+    margin: 0 10px;
+    a {
+    color: #42b983;
+    }
+  }
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
+
 </style>
