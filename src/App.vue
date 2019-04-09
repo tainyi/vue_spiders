@@ -35,7 +35,7 @@
         <el-aside width="200px">
           <el-menu
             :router="true"
-            default-active="2"
+            default-active="activeIndex2"
             class="el-menu-vertical-demo"
             @open="handleOpen"
             @close="handleClose"
@@ -44,17 +44,16 @@
             text-color="#fff"
             active-text-color="#ffd04b"
           >
-            <el-submenu index="1">
+            <el-submenu index="sem">
 
               <template slot="title">
                 <i class="el-icon-location"></i>
-                <span>导航一</span>
+                <span>SEM数据报表</span>
               </template>
 
               <el-menu-item-group>
-                <template slot="title">分组一</template>
-                <el-menu-item index="1-1">选项1</el-menu-item>
-                <el-menu-item index="1-2">选项2</el-menu-item>
+                <el-menu-item index="offline">离线表</el-menu-item>
+                <el-menu-item index="online">实时表</el-menu-item>
               </el-menu-item-group>
 
               <el-menu-item-group title="分组2">
@@ -107,13 +106,13 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     }
   }
 };
@@ -125,6 +124,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
+  height: 100%;
   .el-header {
     background: #545c64;
     .logo {
@@ -134,6 +134,14 @@ export default {
   }
   .section {
     padding-top: 10px;
+    .el-aside{
+      background: #545c64;
+      ul{
+        width: 200px;
+        border: 0
+      }
+      
+    }
     .el-main {
       color: #000;
     }
