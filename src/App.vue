@@ -34,11 +34,12 @@
       <el-container class="section">
         <el-aside width="200px">
           <el-menu
-            v-bind:router="true"
+            :router="true"
             default-active="2"
             class="el-menu-vertical-demo"
             @open="handleOpen"
             @close="handleClose"
+            
             background-color="#545c64"
             text-color="#fff"
             active-text-color="#ffd04b"
@@ -76,15 +77,18 @@
               <span slot="title">wecome</span>
             </el-menu-item>
 
-            <el-menu-item index="4">
+            <el-menu-item index="echarts">
               <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+              <span slot="title">echarts</span>
             </el-menu-item>
 
           </el-menu>
         </el-aside>
         <el-main>
-          <router-view></router-view>
+          <!-- <transition name='fade' mode="out-in"> -->
+            <!-- name绑定动画类名  mode过渡模式 -->
+            <router-view></router-view>
+          <!-- </transition> -->
         </el-main>
 
       </el-container>
@@ -120,32 +124,32 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
   color: #fff;
   .el-header {
-    line-height: 60px;
-    padding: 0;
     background: #545c64;
-    .el-menu {
-      max-width: 1200px;
-      margin: 0 auto;
-      .logo {
-        width: 200px;
-        padding: 0;
-      }
+    .logo {
+      width: 200px;
+      padding: 0;
     }
   }
   .section {
-    width: 1200px;
-    margin: 0 auto;
     padding-top: 10px;
-    max-width: 1200px;
     .el-main {
       color: #000;
     }
-    .el-menu{
-      border: none;
-    }
   }
+}
+
+.fade-enter{
+  //进入过渡开始
+}
+.fade-enter-active{
+  //进入过渡结束
+}
+.fade-leave{
+  //离开过渡开始
+}
+.fade-leave-active{
+  // 离开过渡结束
 }
 </style>
